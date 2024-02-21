@@ -1,0 +1,185 @@
+:root {
+  --darker-black: #1a1a1a;
+  --lighter-black: #272727;
+  --darker-grey: #3b3b3b;
+  --lighter-grey: #555555;
+  --white: #fffeee;
+}
+
+body {
+  background-color: var(--darker-black);
+  color: var(--white);
+  margin: auto;
+  justify-content: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 4em;
+  margin: auto 0.3em;
+  text-align: center;
+}
+
+.menu {
+  background-color: var(--lighter-black);
+  height: 2.8em;
+  width: 10em;
+  margin: 0.5em auto;
+  border-radius: 0.3em;
+  display: flex;
+  padding: 0.2em;
+  justify-content: space-evenly;
+  border: var(--lighter-grey) 2px solid;
+}
+
+img {
+  transform: scale(0.9);
+  background-color: var(--lighter-black);
+  border-radius: 0.5em;
+  padding: 0.2em;
+  cursor: pointer;
+  border: var(--lighter-grey) 2px solid;
+  transition: all 0.3s ease-out;
+}
+
+img:hover {
+  background-color: var(--darker-grey);
+  transition: all 0.3s ease-out;
+}
+
+.note {
+  background-color: var(--lighter-black);
+  border: var(--lighter-grey) 2px solid;
+  border-radius: 0.5em;
+  width: 25em;
+  margin: auto;
+  margin-top: 2em;
+}
+
+.note h2 {
+  font-weight: 400;
+  font-size: 1.7em;
+  margin-left: 0.5em;
+  margin-top: 0.4em;
+  margin-bottom: -0.2em;
+}
+
+.note p {
+  font-size: 1.1em;
+  margin-left: 0.77em;
+}
+
+textarea {
+  font-size: 1em;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: var(--darker-grey);
+  border: var(--lighter-grey) 2px solid;
+  border-radius: 0.2em;
+  color: var(--white);
+  padding: 0.2em;
+  resize: none;
+}
+
+[type="text"] {
+  font-size: 1.5em;
+  background-color: var(--darker-grey);
+  border: var(--lighter-grey) 2px solid;
+  border-radius: 0.2em;
+  color: var(--white);
+  padding: 0.2em;
+}
+
+[type="image"] {
+  border: var(--lighter-grey) 2px solid;
+  width: 2em;
+  margin-top: -0.5em;
+  border-radius: 0.5em;
+  transition: all 0.3s ease-out;
+  background-color: var(--lighter-black);
+}
+
+[type="image"]:hover {
+  background-color: var(--darker-grey);
+  transition: all 0.3s ease-out;
+}
+
+form {
+  display: none;
+  margin: auto;
+  margin-top: 2em;
+  width: 25em;
+  height: 0;
+  transition: all 0.2s ease-out;
+}
+
+form div {
+  justify-self: end;
+  width: 4.5em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal {
+  background-color: var(--lighter-black);
+  margin: auto;
+  display: none;
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  word-wrap: break-word;
+  width: 15em;
+  border-radius: 0.5em;
+  border: var(--lighter-grey) 2px solid;
+  padding: 0.8em;
+  padding-top: 0;
+  font-size: 1.1em;
+  z-index: 6;
+}
+
+.modal p {
+  margin-bottom: 0;
+  text-align: justify;
+}
+
+.modal div {
+  display: flex;
+  justify-content: space-between;
+  justify-self: end;
+  width: 7em;
+  color: var(--white);
+  background-color: var(--lighter-black);
+}
+
+.modal div [type="submit"] {
+  font-size: 1em;
+  color: var(--white);
+  background-color: var(--lighter-black);
+  border-radius: 0.3em;
+  border: var(--lighter-grey) 2px solid;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  margin-top: 0.8em;
+}
+
+.modal div [type="submit"]:hover {
+  background-color: var(--darker-grey);
+  transition: all 0.3s ease-out;
+}
+
+.modal-container {
+  background-image: url(./assets/modal_bg.png);
+  background-repeat: repeat;
+  opacity: 0.5;
+  display: none;
+  position: absolute;
+  filter: blur(50px);
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 5;
+}

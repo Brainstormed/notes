@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="./index.js"></script>
+    <title>Notes</title>
+  </head>
+  <body>
+    <h1>Notes</h1>
+    <div class="modal">
+      <p class="modal-text"></p>
+      <div>
+        <input class="modal-cancel" type="submit" value="Cancel" onclick="cancelDeleteNotes()" />
+        <input class="modal-ok" type="submit" value="Ok" onclick="deleteNotes();" />
+      </div>
+    </div>
+    <div class="modal-container"></div>
+    <div class="menu">
+      <img class="new-note" src="./assets/new.svg" alt="new note" />
+      <img class="edit-note" src="./assets/edit.svg" alt="edit note" />
+      <img class="delete-note" src="./assets/delete.svg" alt="delete note" />
+    </div>
+    <form>
+      <input type="text" placeholder="Enter title here..." />
+      <br />
+      <textarea rows="5" placeholder="Notes..."></textarea>
+      <br />
+      <div>
+        <input class="done" type="image" src="./assets/done.svg" alt="done" />
+        <input
+          class="cancel"
+          type="image"
+          src="./assets/cancel.svg"
+          alt="cancel"
+        />
+      </div>
+    </form>
+    <section class="notesSec"></section>
+  </body>
+</html>
