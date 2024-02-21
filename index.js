@@ -8,7 +8,7 @@ const cancel = document.querySelector(".cancel");
 const notesSec = document.querySelector("section");
 const modal = document.querySelector(".modal");
 const modalContainer = document.querySelector(".modal-container");
-const modalText = document.querySelector(".modal-text")
+const modalText = document.querySelector(".modal-text");
 
 let titles;
 let contents;
@@ -32,9 +32,7 @@ function saveInput() {
     }
     titles.push(titleInput.value);
     contents.push(contentInput.value);
-    notesSec.innerHTML =
-      `<div class="note"><h2>${titleInput.value}</h2><p>${contentInput.value}</p></div>` +
-      notesSec.innerHTML;
+    notesSec.innerHTML = `<div class="note"><h2>${titleInput.value}</h2><p>${contentInput.value}</p></div>${notesSec.innerHTML}`;
     localStorage.setItem("titles", JSON.stringify(titles));
     localStorage.setItem("contents", JSON.stringify(contents));
     titleInput.value = "";
@@ -112,9 +110,9 @@ deleteBtn.addEventListener("click", () => {
   if (titles.length !== 0) {
     modal.style.display = "grid";
     modalContainer.style.display = "block";
-    modal.style.transform = "translate(-50%, -30vh)"
-    setTimeout(() => modal.style.transform = "translate(-50%, 0)", 10);
-    modal.style.transition = "all 0.1s ease-out"
+    modal.style.transform = "translate(-50%, -30vh)";
+    setTimeout(() => (modal.style.transform = "translate(-50%, 0)"), 10);
+    modal.style.transition = "all 0.1s ease-out";
     modalText.textContent = "Are you sure you want to delete all notes?";
   }
 });
@@ -138,8 +136,6 @@ if (titles.length === 0 && contents.length === 0) {
   noNotes();
 } else {
   for (let index = 0; index < titles.length; index++) {
-    notesSec.innerHTML =
-      `<div class="note"><h2>${titles[index]}</h2><p>${contents[index]}</p></div>` +
-      notesSec.innerHTML;
+    notesSec.innerHTML = `<div class="note"><h2>${titles[index]}</h2><p>${contents[index]}</p></div>${notesSec.innerHTML}`;
   }
 }
