@@ -9,6 +9,8 @@ const notesSec = document.querySelector("section");
 const modal = document.querySelector(".modal");
 const modalContainer = document.querySelector(".modal-container");
 const modalText = document.querySelector(".modal-text");
+const modalOk = modal.querySelector(".modal-ok");
+const modalCancel = modal.querySelector(".modal-cancel");
 
 let titles;
 let contents;
@@ -102,12 +104,10 @@ form.addEventListener("keydown", (e) => {
   }
 });
 
-newBtn.addEventListener("click", () => {
-  newNote();
-});
+newBtn.addEventListener("click", () => newNote());
 
 deleteBtn.addEventListener("click", () => {
-  if (titles.length !== 0) {
+  if (JSON.parse(localStorage.getItem("titles")) !== null) {
     modal.style.display = "grid";
     modalContainer.style.display = "block";
     modal.style.transform = "translate(-50%, -30vh)";
@@ -116,6 +116,10 @@ deleteBtn.addEventListener("click", () => {
     modalText.textContent = "Are you sure you want to delete all notes?";
   }
 });
+
+modalCancel.addEventListener("click", () => hideModal());
+
+modalOk.addEventListener("click", () => deleteNotes());
 
 done.addEventListener("click", (e) => {
   e.preventDefault();
