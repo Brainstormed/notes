@@ -129,8 +129,8 @@ newBtn.addEventListener("click", () => newNote());
 
 deleteBtn.addEventListener("click", () => {
   if (JSON.parse(localStorage.getItem("titles")) !== null) {
-    modal.style.display = "grid";
     modalContainer.style.display = "block";
+    modal.style.display = "grid";
     modal.style.transform = "translate(-50%, -30vh)";
     setTimeout(() => (modal.style.transform = "translate(-50%, 0)"), 10);
     modal.style.transition = "all 0.1s ease-out";
