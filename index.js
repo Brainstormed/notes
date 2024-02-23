@@ -158,12 +158,12 @@ if (titles.length === 0 && contents.length === 0) {
 } else {
   for (let index = 0; index < titles.length; index++) {
     notesSec.innerHTML = `<div class="note">
-    <h2>Hello</h2>
+    <h2>${titles[index]}</h2>
     <div>
       <div class="date">${dates[index].join("/")}</div>
       <div class="time">${times[index].join(":")}</div>
     </div>
-    <p>Hello</p>
+    <p>${contents[index]}</p>
   </div>${notesSec.innerHTML}`;
   }
 }
