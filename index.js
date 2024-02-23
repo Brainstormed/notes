@@ -12,18 +12,21 @@ const modalText = document.querySelector(".modal-text");
 const modalOk = modal.querySelector(".modal-ok");
 const modalCancel = modal.querySelector(".modal-cancel");
 
-let titles;
-let contents;
+let titles = [];
+let contents = [];
+let dates = [];
+let times = [];
 
 if (
   localStorage.getItem("titles") !== null &&
-  localStorage.getItem("contents") !== null
+  localStorage.getItem("contents") !== null &&
+  localStorage.getItem("dates") !== null &&
+  localStorage.getItem("times") !== null
 ) {
   titles = JSON.parse(localStorage.getItem("titles"));
   contents = JSON.parse(localStorage.getItem("contents"));
-} else {
-  titles = [];
-  contents = [];
+  dates = JSON.parse(localStorage.getItem("dates"));
+  times = JSON.parse(localStorage.getItem("times"));
 }
 
 function saveInput() {
@@ -32,11 +35,25 @@ function saveInput() {
       notesSec.style = {};
       notesSec.innerHTML = "";
     }
+    const dateTimeRaw = new Date();
+    const date = [
+      dateTimeRaw.getDate(),
+      dateTimeRaw.getMonth(),
+      dateTimeRaw.getFullYear(),
+    ];
+    const time = [dateTimeRaw.getHours(), dateTimeRaw.getMinutes()];
     titles.push(titleInput.value);
     contents.push(contentInput.value);
-    notesSec.innerHTML = `<div class="note"><h2>${titleInput.value}</h2><p>${contentInput.value}</p></div>${notesSec.innerHTML}`;
+    dates.push(date);
+    times.push(time);
+    notesSec.innerHTML = `<div class="note"><h2>${titleInput.value}</h2><div>
+    <div class="date">${date.join("/")}</div>
+    <div class="time">${time.join(":")}</div>
+  </div><p>${contentInput.value}</p></div>${notesSec.innerHTML}`;
     localStorage.setItem("titles", JSON.stringify(titles));
     localStorage.setItem("contents", JSON.stringify(contents));
+    localStorage.setItem("dates", JSON.stringify(dates));
+    localStorage.setItem("times", JSON.stringify(times));
     titleInput.value = "";
     contentInput.value = "";
     form.style.display = "none";
@@ -140,6 +157,13 @@ if (titles.length === 0 && contents.length === 0) {
   noNotes();
 } else {
   for (let index = 0; index < titles.length; index++) {
-    notesSec.innerHTML = `<div class="note"><h2>${titles[index]}</h2><p>${contents[index]}</p></div>${notesSec.innerHTML}`;
+    notesSec.innerHTML = `<div class="note">
+    <h2>Hello</h2>
+    <div>
+      <div class="date">${dates[index].join("/")}</div>
+      <div class="time">${times[index].join(":")}</div>
+    </div>
+    <p>Hello</p>
+  </div>${notesSec.innerHTML}`;
   }
 }

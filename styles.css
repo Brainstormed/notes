@@ -58,6 +58,9 @@ img:hover {
   width: 25em;
   margin: auto;
   margin-top: 2em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
 }
 
 .note h2 {
@@ -71,6 +74,13 @@ img:hover {
 .note p {
   font-size: 1.1em;
   margin-left: 0.77em;
+  margin-top: 0;
+}
+
+.note div {
+  margin-top: 0.4em;
+  margin-right: 0.5em;
+  text-align: right;
 }
 
 textarea {
