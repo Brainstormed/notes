@@ -87,6 +87,10 @@ function hideModal() {
 
 function deleteNotes() {
   localStorage.clear();
+  titles = [];
+  contents = [];
+  dates = [];
+  times = [];
   hideModal();
   noNotes();
 }
