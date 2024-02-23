@@ -99,7 +99,7 @@ textarea {
   color: var(--white);
   padding: 0.2em;
   resize: none;
-  max-width: 90vw;
+  max-width: 85vw;
 }
 
 [type="text"] {
@@ -109,7 +109,7 @@ textarea {
   border-radius: 0.2em;
   color: var(--white);
   padding: 0.2em;
-  max-width: 90vw;
+  max-width: 85vw;
 }
 
 [type="image"] {
@@ -119,6 +119,7 @@ textarea {
   border-radius: 0.5em;
   transition: all 0.3s ease-out;
   background-color: var(--lighter-black);
+  
 }
 
 [type="image"]:hover {
@@ -131,7 +132,7 @@ form {
   margin: auto;
   margin-top: 2em;
   width: 25em;
-  max-width: 90%;
+  max-width: 90vw;
   height: 0;
   transition: all 0.2s ease-out;
 }
@@ -204,4 +205,3 @@ form div {
   right: 0;
   z-index: 5;
 }
-
