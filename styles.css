@@ -51,11 +51,17 @@ img:hover {
   transition: all 0.3s ease-out;
 }
 
+section {
+  max-width: 90%;
+  margin: auto;
+}
+
 .note {
   background-color: var(--lighter-black);
   border: var(--lighter-grey) 2px solid;
   border-radius: 0.5em;
   width: 25em;
+  max-width: 90%;
   margin: auto;
   margin-top: 2em;
   display: grid;
@@ -93,6 +99,7 @@ textarea {
   color: var(--white);
   padding: 0.2em;
   resize: none;
+  max-width: 90vw;
 }
 
 [type="text"] {
@@ -102,6 +109,7 @@ textarea {
   border-radius: 0.2em;
   color: var(--white);
   padding: 0.2em;
+  max-width: 90vw;
 }
 
 [type="image"] {
@@ -123,6 +131,7 @@ form {
   margin: auto;
   margin-top: 2em;
   width: 25em;
+  max-width: 90%;
   height: 0;
   transition: all 0.2s ease-out;
 }
@@ -196,8 +205,3 @@ form div {
   z-index: 5;
 }
 
-@media (max-width: 420px) {
-  body {
-    transform: scale(0.8);
-  }
-}
