@@ -65,8 +65,9 @@ section {
   margin: auto;
   margin-top: 2em;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 3fr 1fr;
   justify-content: space-between;
+  word-break: break-all;
 }
 
 .note h2 {
