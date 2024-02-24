@@ -30,7 +30,7 @@ if (
 }
 
 function saveInput() {
-  if (titleInput.value.length !== 0) {
+  if (titleInput.value.trim().length !== 0) {
     if (notesSec.innerText === "There are no notes!") {
       notesSec.style = {};
       notesSec.innerHTML = "";
@@ -42,14 +42,14 @@ function saveInput() {
       dateTimeRaw.getFullYear(),
     ];
     const time = [dateTimeRaw.getHours(), dateTimeRaw.getMinutes()];
-    titles.push(titleInput.value);
-    contents.push(contentInput.value);
+    titles.push(titleInput.value.trim());
+    contents.push(contentInput.value.trim());
     dates.push(date);
     times.push(time);
-    notesSec.innerHTML = `<div class="note"><h2>${titleInput.value}</h2><div>
+    notesSec.innerHTML = `<div class="note"><h2>${titleInput.value.trim()}</h2><div>
     <div class="date">${date.join("/")}</div>
     <div class="time">${time.join(":")}</div>
-  </div><p>${contentInput.value}</p></div>${notesSec.innerHTML}`;
+  </div><p>${contentInput.value.trim()}</p></div>${notesSec.innerHTML}`;
     localStorage.setItem("titles", JSON.stringify(titles));
     localStorage.setItem("contents", JSON.stringify(contents));
     localStorage.setItem("dates", JSON.stringify(dates));
