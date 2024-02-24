@@ -99,6 +99,17 @@ function cancelDeleteNotes() {
   hideModal();
 }
 
+function showModal() {
+  if (JSON.parse(localStorage.getItem("titles")) !== null) {
+    modalContainer.style.display = "block";
+    modal.style.display = "grid";
+    modal.style.transform = "translate(-50%, -30vh)";
+    setTimeout(() => (modal.style.transform = "translate(-50%, 0)"), 10);
+    modal.style.transition = "all 0.1s ease-out";
+    modalText.textContent = "Are you sure you want to delete all notes?";
+  }
+}
+
 titleInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     e.preventDefault();
@@ -128,13 +139,13 @@ form.addEventListener("keydown", (e) => {
 newBtn.addEventListener("click", () => newNote());
 
 deleteBtn.addEventListener("click", () => {
-  if (JSON.parse(localStorage.getItem("titles")) !== null) {
-    modalContainer.style.display = "block";
-    modal.style.display = "grid";
-    modal.style.transform = "translate(-50%, -30vh)";
-    setTimeout(() => (modal.style.transform = "translate(-50%, 0)"), 10);
-    modal.style.transition = "all 0.1s ease-out";
-    modalText.textContent = "Are you sure you want to delete all notes?";
+  showModal();
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.altKey && (e.key === "D" || e.key === "d")) {
+    e.preventDefault();
+    showModal();
   }
 });
 
